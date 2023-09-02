@@ -1,4 +1,4 @@
-package Ch8_FunctionalProgramming;
+package Ch8_FunctionalProgramming.P166;
 
 import Ch8_FunctionalProgramming.P166.Filter;
 import Ch8_FunctionalProgramming.P166.HeavyMelonPredicate;
