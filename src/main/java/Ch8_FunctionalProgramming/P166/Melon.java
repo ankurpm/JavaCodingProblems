@@ -1,4 +1,4 @@
-package Ch8_FunctionalProgramming;
+package Ch8_FunctionalProgramming.P166;
 
 public class Melon {
 

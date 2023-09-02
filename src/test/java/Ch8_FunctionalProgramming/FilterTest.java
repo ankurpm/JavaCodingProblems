@@ -1,10 +1,13 @@
 package Ch8_FunctionalProgramming;
 
+import Ch8_FunctionalProgramming.P166.Filter;
+import Ch8_FunctionalProgramming.P166.HeavyMelonPredicate;
+import Ch8_FunctionalProgramming.P166.Melon;
+import Ch8_FunctionalProgramming.P166.MelonPredicate;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
@@ -51,5 +54,37 @@ public class FilterTest {
         list.add(new Melon("Water",501, "canada"));
         List<Melon> result = filter.filterUsingPredicateParameter(list, new HeavyMelonPredicate());
         assertThat(result.get(0)).isSameAs(list.get(1));
+    }
+
+    @Test
+    void test_FilterUsingAnonymousClass(){
+        List<Melon> list = Mockito.spy(new ArrayList<>());
+        list.add(new Melon("Musk",340, "canada"));
+        list.add(new Melon("Water",501, "canada"));
+        List<Melon> result = filter.filterUsingPredicateParameter(list, new MelonPredicate() {
+            @Override
+            public boolean test(Melon melon) {
+                return melon.getWeight()==340;
+            }
+        });
+        assertThat(result.get(0)).isSameAs(list.get(0));
+    }
+
+    @Test
+    void test_FilterLambdaFunction(){
+        List<Melon> list = Mockito.spy(new ArrayList<>());
+        list.add(new Melon("Musk",340, "canada"));
+        list.add(new Melon("Water",501, "canada"));
+        List<Melon> result = filter.filterUsingPredicateParameter(list, melon -> melon.getWeight()==340);
+        assertThat(result.get(0)).isSameAs(list.get(0));
+    }
+
+    @Test
+    void test_PredicateFunctionalInterface(){
+        List<Melon> list = Mockito.spy(new ArrayList<>());
+        list.add(new Melon("Musk",340, "canada"));
+        list.add(new Melon("Water",501, "canada"));
+        List<Melon> result = filter.filterUsingFunctionalInterface(list, (Melon m) -> m.getType().equals("Musk"));
+        assertThat(result.get(0)).isSameAs(list.get(0));
     }
 }
