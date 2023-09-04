@@ -1,0 +1,2 @@
+This example demonstrate a template method pattern.
+In this pattern we do not need to create an abstract class and its abstract methods, instead we can create a template method using Consumer functional interface
