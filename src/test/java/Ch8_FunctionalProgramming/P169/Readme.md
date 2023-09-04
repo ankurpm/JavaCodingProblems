@@ -1,0 +1,2 @@
+This problem is showing Factory Design Pattern.
+Instead of using Switch statement to create instance of the required time, we are using a Map and functional interface Supplier and method reference to create the required object
