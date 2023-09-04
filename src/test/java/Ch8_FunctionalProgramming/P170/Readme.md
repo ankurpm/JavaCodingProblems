@@ -1,0 +1,2 @@
+This example shows the strategy pattern implemented using Lambdas.
+We do not need to create new classes for each new strategy of a functional interface, instead we can define each strategy in a lambda expression.
