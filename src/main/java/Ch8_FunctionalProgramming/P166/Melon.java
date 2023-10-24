@@ -61,7 +61,7 @@ public class Melon {
 
     @Override
     public String toString() {
-        return "Melon{" +
+        return "Car{" +
                 "type='" + type + '\'' +
                 ", weight=" + weight +
                 ", origin='" + origin + '\'' +
