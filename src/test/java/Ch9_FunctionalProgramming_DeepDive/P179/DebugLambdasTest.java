@@ -18,7 +18,12 @@ public class DebugLambdasTest {
      */
     @Test
     void test1(){
-        mock.debugMethod();
+        mock.debugMethod1();
+    }
+
+    @Test
+    void test2(){
+        mock.debugMethod2();
     }
 
 }
