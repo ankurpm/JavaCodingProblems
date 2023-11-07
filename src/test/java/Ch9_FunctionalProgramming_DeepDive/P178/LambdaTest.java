@@ -36,4 +36,11 @@ public class LambdaTest {
         List<String> resultList = lambda.readStringFromStrings(input);
         assertThat(resultList).hasSize(input.size());
     }
+
+    @Test
+    void test_staticMethod() {
+        String s1 = "One";
+        String result = Lambda.returnCharacter(s1);
+        assertThat(result.equals(s1.toUpperCase()));
+    }
 }
